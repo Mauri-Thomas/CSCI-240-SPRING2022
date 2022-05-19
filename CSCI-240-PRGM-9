@@ -1,0 +1,140 @@
+#include <iostream>
+#include <iomanip>
+#include <string.h>
+#include <cmath>
+using namespace std;
+
+class Parabola
+{ //data members, put coefficients for parabola
+private:
+	double yCoord, xCoord, Coeff, aCoeff, bCoeff, cCoeff;
+	double sqrt(double a);
+	
+public:
+	Parabola(double a, double b, double c)
+	{
+	if(a==0)
+		Coeff = 1;
+	else
+		aCoeff = a;
+		bCoeff = b;
+		cCoeff = c;
+	}
+
+
+
+//methods ***Errors about no declaration in the slops? I have declared in the class function...
+double calcX() //calculate x coord
+{
+	xCoord = - bCoeff / ( 2 * aCoeff);	
+	return -bCoeff / (2 * aCoeff);
+}
+
+double calcY() //calculate y coord
+{
+	yCoord = aCoeff * (xCoord * xCoord) + bCoeff * xCoord + cCoeff
+	;return (aCoeff * (xCoord * xCoord) + bCoeff * xCoord + cCoeff);
+}
+
+double calcDiscrim() //calculate discriminant
+{
+	calcDiscrim = (bCoeff * bCoeff) - 4 * aCoeff * cCoeff //i get an error here saying "invalid use of member (did you forget the '&' ?)...& where exactly? this is the equation from the program requirements.
+	return( (bCoeff * bCoeff) - 4 * aCoeff * cCoeff );
+}
+
+double calcRoots(double &root1, double &root2) //calculate roots and passes back the roots
+{
+	if(calcDiscrim()==0)
+	{
+		root1 = -bCoeff / (2 * aCoeff);
+		return 1; 
+	}
+	
+	else if(calcDiscrim()>0)
+	{
+	root1 = (-bCoeff + sqrt(calcDiscrim())) / (2 * aCoeff);
+	root2 = (-bCoeff + sqrt(calcDiscrim())) / (2 * aCoeff);
+	return 2;
+	}
+
+	else if(calcDiscrim()<0)
+	return 0;
+	}
+};
+
+void printEquation() //this displays the parabola - quadratic equation
+{
+	double aCoeff, bCoeff, cCoeff;
+	cout << aCoeff << "x^2 + " << bCoeff << "x + " << cCoeff << endl;
+	return 0; 
+}
+
+void printVertex() //this displays the x and y-coordinate of the vertex
+{
+	string calcX, calcY;
+	cout << "Vertex Coordinates: ("<< calcX() << "," << calcY() <<")" << endl;
+	return 0;
+}
+
+void printRoots() //this displays the roots of the parabola
+{
+double number;
+double calcRoots;
+double root1, root2;
+double &a = root1;
+double &b = root2;
+number = calcRoots(a, b);
+
+if(number==0)
+	cout << "There are NO real roots" << endl;
+
+if(number==1)
+	cout << "There is one real root with X-Coordinate root_1_value" << fixed << setprecision(3) << &a << endl;
+
+if(number==2)
+	cout << "There are two real roots with X-Coordinate root_1_value" << fixed << setprecision(3) << &a << "and root_2_value" << fixed << setprecision(3) << &b << endl;
+}
+
+void printConcavity() //this displays the direction of parabola opening
+{
+	double aCoeff;
+if(aCoeff < 0)
+	cout << "The parabola opens Downward" << endl;
+else
+	cout << "The parabola opens Upward" << endl; 
+}
+
+void print()
+{
+	printEquation();
+	printVertex();
+	printConcavity();
+	printRoots();
+}
+};
+
+int main()
+{
+	Parabola p1(1, 4, -5);
+	Parabola p2(0, 0, 25);
+	Parabola p3(-1, 2, -1);
+	Parabola p4(-12, -2, 3);
+	Parabola p5(12, 2, 3);
+
+	cout << "The first parabola:" << endl;
+	p1.print();
+
+	cout << "The second parabola:" << endl;
+	p2.print();
+
+	cout << "The third parabola:" << endl;
+	p3.print();
+
+	cout << "The fourth parabola:" << endl;
+	p4.print();
+
+	cout << "The fifth parabola:" << endl;
+	p5.print();
+	
+return 0;
+}
