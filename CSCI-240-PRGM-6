@@ -1,0 +1,82 @@
+#include <iostream>
+#include <iomanip>
+#include <cctype>
+
+using namespace std;
+
+int i;
+int courseInfo ;
+double creditHours, creditTotal;
+double gradePoints, CalcGpa;
+char choice, grade, gradePlus;
+
+int main() //idk what i am doing
+{
+    
+    {
+	
+    cout << "Is there course information? " << choice << endl;
+    cin >> courseInfo;
+
+    for (i = 0; i < courseInfo; ++i)
+    {
+
+        cout << "Enter the credit hours for the course: " << endl;
+        cin >> creditHours;
+
+        cout << "Enter the grade for the course: " << endl;
+        cin >> grade;
+        cin.get(gradePlus);
+        cout << endl;
+
+        cout << "Credit hours: " << creditHours << "Grade: " << grade << gradePlus << endl;
+
+        creditTotal += creditHours;
+
+        if (grade == 'A' && gradePlus != '-' && gradePlus != '+')
+            gradePoints += 4.00 * creditHours;
+        else if (grade == 'A' || grade == 'a' && gradePlus == '-')
+            gradePoints += 3.67 * creditHours;
+        else if (grade == 'B' || grade == 'b' && gradePlus == '+')
+            gradePoints += 3.33 * creditHours;
+        else if (grade == 'B' || grade == 'b' && gradePlus != '-' && gradePlus != '+')
+            gradePoints += 3.00 * creditHours;
+        else if (grade == 'B' || grade == 'b' && gradePlus == '-')
+            gradePoints += 2.67 * creditHours;
+        else if (grade == 'C' || grade == 'c' && gradePlus == '+')
+            gradePoints += 2.33 * creditHours;
+        else if (grade == 'C' || grade == 'c' && gradePlus != '-' && gradePlus != '+')
+            gradePoints += 2.00 * creditHours;
+        else if (grade == 'C' || grade == 'c' && gradePlus == '-')
+            gradePoints += 1.67 * creditHours;
+        else if (grade == 'D' || grade == 'd' && gradePlus == '+')
+            gradePoints += 1.33 * creditHours;
+        else if (grade == 'D' || grade == 'd' && gradePlus != '-' && gradePlus != '+')
+            gradePoints += 1.00 * creditHours;
+        else if (grade == 'D' || grade == 'd' && gradePlus == '-')
+            gradePoints += 0.67 * creditHours;
+        else if (grade == 'F' || grade == 'f' && gradePlus != '-' && gradePlus != '+')
+            gradePoints += 0.00 * creditHours;
+    }
+    
+    {
+    double gpa = gradePoints / creditTotal;
+
+    cout << "\nCredits: " << creditTotal << endl;
+    cout << "Points: " << gradePoints << endl;
+    cout << "GPA: " << CalcGpa << endl;
+
+    cout << "\n\nWould you like to run the program again? (Y/N) ";
+    cin >> choice; choice = toupper(choice);
+
+    }
+    
+	{
+	while (choice == 'Y');
+
+    cout << "\n\nGoodbye...\n" << endl;
+
+    return 0;
+}
+}
+}
