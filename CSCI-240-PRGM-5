@@ -1,0 +1,85 @@
+#include <iostream>
+#include <iomanip>
+
+
+using namespace std;
+
+int main()
+{
+// My variables(player = current player, pa = player A, pb = player B)
+string player[2];
+
+int chips, maxchips = 0, minchips, totalchips; //chips for the actual game...based on users input
+
+cout << "Rules: The game starts with a pile of chips. " << endl
+	 << "       Each player may only take at most half of the chips. " << endl
+	 << "       The player that gets the last chip wins. Good luck! " << endl << endl;
+
+//get both players names
+cout << "Player 1, what is your name? ";
+cin >> player[0];
+
+cout << "Player 2, what is your name? ";
+cin >> player[1];
+
+cout << endl;
+
+//get a chip total from user
+cout << "How many chips to start the game? ";
+cin >> totalchips;
+
+//while loop
+while (chips <= 0)
+{
+cout << "This is an invalid number of chips. Please try again (min: " << minchips << " -- max: " << maxchips << " )? ";
+cin >> chips;
+
+;if (chips >= maxchips)
+{
+cout << "This is an invalid number of chips. Please try again (min: " << minchips << " -- max: " << maxchips << " )? ";
+cin >> chips; 
+}
+}
+
+//start the game
+if(player += player[1])
+{
+	player = player[0];
+}
+else
+{
+	player = player[1];
+} 
+
+
+//ask for chips
+if (chips = maxchips - totalchips ; totalchips > 0; )
+{
+maxchips = totalchips / 2;
+minchips = 1;
+
+
+cout << endl << player[0] << " how many of the remaining " << totalchips << " chip(s) would you like(min: " << minchips << " -- max: " << maxchips << " )? ";
+cin >> chips;
+
+cout << endl << player[1] << " how many of the remaining " << totalchips << " chip(s) would you like(min: " << minchips << " -- max: " << maxchips << " )? ";
+cin >> chips; 
+//for some reason the code does not change the amount of chips remaining...
+
+//display error messages..(nor do the errors work correctly...)
+
+
+
+//game congratulates winner
+if (totalchips == 0)
+{
+cout << " Hooray " << player[i] << "! You won the game! " <<endl; 
+}
+
+} 
+
+
+
+
+return 0;         
+}
