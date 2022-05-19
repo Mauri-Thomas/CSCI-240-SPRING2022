@@ -1,0 +1,52 @@
+/***************************************************************
+CSCI 240         Program 3     Spring 2022
+
+Programmer: Mauri Thomas, Z1892425
+
+Section: 0001
+
+Date Due: 2/4/2022
+
+Purpose: 
+***************************************************************/
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+//step 1: create some variables
+
+float radius, length, height, area_c, area_t; //area_c is for circle, area_t is for triangle
+
+//step 2: get values
+
+cout << "What is the radius of the circle? "
+;cin >> radius; 
+
+cout << "What is the length of the triangle base? "
+;cin >> length; 
+
+cout << "What is the height of the triangle? "
+;cin >> height; 
+
+//step 3: get calculations.
+
+area_t = 0.5 * length * height
+
+;area_c = 3.14159 * radius * radius
+
+
+//step 4: set format for float vairable
+;cout << setprecision(2) << fixed;
+
+cout << endl << endl
+	 << "....................." << endl
+	 << "    Area Results " << endl
+	  << "....................." << endl << endl
+	 << "Circle       " << setw(6) << area_c << endl
+	 << "Triangle     " << setw(6) << area_t << endl;
+
+return 0;
+}
