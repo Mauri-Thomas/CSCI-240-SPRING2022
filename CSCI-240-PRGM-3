@@ -1,0 +1,148 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+//step 1: declare variables
+
+char menu_choice;
+
+double circle, radiusc, tri, tril, trih, trap, traplt, traplb, traph, ell, ella, ellb;
+//circle variables are circle and radiusc.
+//triangle variables are tri, tril(triangle length), trih(triangle height)
+//trapezoid variables are trap, traplt(trap length top), traplb(trap length bottom), traph(trap height)
+//ellipse variable are ella, ella(semi-major length), ellb(semi-minor length)
+
+
+//step 2: display a menu of options and get a choice
+
+cout << "Area Calculator" << endl
+	 << "1) Calculate the area of a circle" << endl
+	 << "2) Calculate the area of a triangle" << endl
+	 << "3) Calculate the area of a trapezoid" << endl
+	 << "4) Calculate the area of an ellipse" << endl << endl
+	 << "What is your choice(1-4)? ";
+	 
+cin >> menu_choice
+
+//if user chose circle
+;if( menu_choice == '1' )
+	{
+		cout << "What is the radius of the circle? "
+		;cin >> radiusc;
+		
+		circle = 3.14159 * radiusc * radiusc
+		
+		//display the bad result
+		;if( radiusc <= 0 )
+  			{
+  				cout << radiusc << " Is an invalid value. Try again. Enter a value greater than 0: ";
+ 				;cin >> radiusc;
+ 			 }
+		
+		//display the good result
+		;cout << "The area of a circle with radius " << radiusc << " is " << circle << endl << endl;		
+	}
+//else if the user chose traiangle
+else if( menu_choice == '2')
+    {
+		cout << "What is the length of the triangle base? "
+		;cin >> tril; 
+		
+		;if( tril <= 0 )
+  			{
+  				cout << tril << " Is an invalid value. Try again. Enter a value greater than 0: ";
+ 				;cin >> tril;
+ 			 }
+
+		cout << "What is the height of the triangle? "
+		;cin >> trih; 
+		
+		;if( trih <= 0 )
+  			{
+  				cout << trih << " Is an invalid value. Try again. Enter a value greater than 0: ";
+ 				;cin >> trih;
+ 			 }
+		
+		tri = 0.5 * tril * trih
+			 
+		;cout << "The area of a triangle with a base of " << tril << " and height of " << trih << " is " << tri << endl << endl;		
+	}
+
+//else if the user chose trapezoid
+else if( menu_choice == '3')
+    {
+		cout << "What is the top length of the trapezoid? "
+		;cin >> traplt; 
+		
+		;if( traplt <= 0 )
+  			{
+  				cout << traplt << " Is an invalid value. Try again. Enter a value greater than 0: ";
+ 				;cin >> traplt;
+ 			 }
+ 			 
+ 		cout << "What is the bottom length of the trapezoid? "
+		;cin >> traplb; 
+ 			 
+ 		;if( traplb <= 0 )
+  			{
+  				cout << traplb << " Is an invalid value. Try again. Enter a value greater than 0: ";
+ 				;cin >> traplb;
+ 			 }
+
+		cout << "What is the height of the trapezoid? "
+		;cin >> traph; 
+		
+		;if( traph <= 0 )
+  			{
+  				cout << traph << " Is an invalid value. Try again. Enter a value greater than 0: ";
+ 				;cin >> traph;
+ 			 }
+		
+		trap =  0.5 * (traplt + traplb) * traph
+
+			 
+		;cout << "The area of a trapezoid with a top length of " << traplt << " bottom length of " << traplb << " and height of " << traph << " is " << trap << endl << endl;		
+	}
+	
+//else if the user chose ellipse
+else if( menu_choice == '4')
+    {
+		cout << "What is the length of the semi-major axis of the ellipse? "
+		;cin >> ella
+		
+		;if( ella <= 0 )
+  			{
+  				cout << ella << " Is an invalid value. Try again. Enter a value greater than 0: ";
+ 				;cin >> ella;
+ 			 }
+ 		
+		cout << "What is the length of the semi-minor axis of the ellipse? "
+		;cin >> ellb 
+		
+		;if( ellb <= 0 )
+  			{
+  				cout << ellb << " Is an invalid value. Try again. Enter a value greater than 0: ";
+ 				;cin >> ellb;
+ 			 }
+
+		ell = 3.14159 * ella* ellb
+			 
+		;cout << "The area of an ellipse with a semi-major axis length of " << ella << " and semi-minor axis length of " << ellb << " is " << ell << endl << endl;		
+	}
+
+
+//else the menu choice is incorrect
+else
+	{
+		cout << "Seems like you put in an invalid choice" << endl << endl;
+	}
+
+
+
+
+
+return 0;
+}
