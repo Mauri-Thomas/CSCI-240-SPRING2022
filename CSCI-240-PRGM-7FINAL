@@ -1,0 +1,119 @@
+#include <iostream>
+#include <iomanip>
+#include <string>
+#include <iomanip>
+#include <cstdlib>
+//symbolic contants
+#define lowerbd 1.0
+#define upperbd 750.0
+#define MAX 150
+#define MIN 25
+#define PERLINE 10
+
+using namespace std;
+
+double randDouble();
+int buildRandom( double array[]);
+void print( string title, double array[], int numberOfValues );
+void sort( double array[], int numberOfValues );
+
+
+int main()
+{
+	srand(88); 
+	
+	double array[MAX];
+	int array1; 
+	int array2;
+	
+	array1 = buildRandom( double array[] )
+	cout << "There are 98 values in the first array " << array1 << endl;
+	
+	array2 = buildFromFile(fileArray);
+    cout << "There are 38 values in the second array " << array2 << endl;
+
+	print( "Random Array Values: ", double array[], array1 );
+	print( "File Values: ", fileArray, array2 );
+	
+	sort( double array[], array1);
+	sort( fileArray, array2 );
+	
+	print( "Sorted Random Values: ", double array[], array1);
+	print( "Sorted File Values: ", fileArray, array2 );
+	
+	return 0;
+	
+}
+
+double randDouble()
+{
+	return lowerbd + (rand() / MAX / upperbd - lowerbd);
+}
+
+int buildRandom( doule array[] )
+{
+
+   int cnt = MIN + (rand() % (MAX - MIN + 1));
+   for (int i = 0; i < cnt; i++) {
+       array[i] = rand();
+   }
+   return cnt;	
+}
+int buildFromFile(double array[]) 
+{
+   
+   int i=0;
+   double num;
+   
+   ifstream infile; 
+   infile.open( "nums.txt" );
+
+   if ( infile.fail() ) 
+   {
+       cout << "nums.txt file not found." << endl;
+       exit(-1);
+   }
+   while ( infile.open() ) 
+   {
+       array[i] = num;
+       i++;
+   }
+   return i;
+}
+
+void print( string title, double array[], int numberOfValues )
+{
+	cout << fixed << setprecision(3); 
+   	cout << "\n" << title << endl<< endl;
+    for (int i = 0; i < numberOfValues; i++)
+   {
+       if (i % 10 == 0 && i != 0) 
+	   {
+           cout << "\n" << array[i] << " ";
+       }
+       else
+	   {
+           cout << array[i] << " ";
+       }
+   }
+   cout << endl;	
+}
+
+void sort( double array[], int numberOfValues )
+{
+	int index;
+    for (int i = 0; i < numberOfValues - 1; i++)
+   {
+       index = i;
+       for (int n = i + 1; n < numberOfValues; n++) 
+	   {
+           if (array[n] < array[index]) 
+		   {
+               index = n;
+           }  
+       }
+       double ar = array[index];
+       array[index] = array[i];
+       array[i] = ar;
+   }	
+}
