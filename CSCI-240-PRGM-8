@@ -1,0 +1,117 @@
+#include <iostream>
+#include <iomanip>
+#include <string.h>
+using namespace std;
+//Player class definition
+class Player
+{
+public:
+ Player();
+ Player(const char[], int, int, int );
+ 
+ void printPlayer();
+ void setName(const char [] );
+ void changeGoals( int );
+ void changeAssists( int );
+ void changeRating( int );
+ int getGoals();
+ int getAssists();
+ int getRating();
+private:
+ char name[50];
+ int goals;
+ int assists;
+ int rating;
+};
+//Constructors
+Player()
+{
+ char name[] = "\0";
+ goals = 0;
+ assists = 0;
+ points = 0;
+ 
+}
+Player(const char[], int g, int a, int p)
+ {
+ setName("n/a");
+ changeGoals(g);
+ changeAssists(a);
+ changePoints(p);
+ }
+//Methods
+void printPlayer ()
+ {
+ int points;
+ cout << name << num << endl;
+ points = goals + assists;
+ cout << "Goals: " << goals << "Assist: " << assists << "Points: "<< points << "Plus/Minus: " << rating << endl;
+ }
+void setName(const char newName[])
+ { 
+ player(name, newName);
+ }
+ 
+void setNumber( int newNumber)
+ {
+ number( num, newNumber);
+ }
+void changeGoals(int goalsScored)
+ {
+ if (goalsScored <0)
+ cout << "error: number of goals cannot be less than 0 " << endl;
+ else assists += goalsScored;
+ }
+ 
+void changeAssists (int assistsEarned)
+ {
+ if (assistsEarned<0)
+ cout << "error: number of assists cannot be less than 0 " << endl;
+ else 
+ assists += assistsEarned;
+ }
+ 
+//returning methods
+string getName()
+ {
+ return name;
+ }
+ 
+int getNumber()
+ {
+ return num;
+ }
+ 
+int getGoals()
+ {
+ return goals;
+ }
+int getAssists()
+ {
+ return assists;
+ }
+int getRating()
+ {
+ return rating;
+ }
+//main print player names
+int main ()
+{
+Player1( "Mauri Thomas ", 52, 15, 13);
+cout << "Player object: " << endl;
+player.printPlayer();
+Player2();
+Player3( "Patrick Kane ", 88, 23, 60);
+cout << "Player: " << endl;
+player.printPlayer();
+Player4( "Alex DeBrincat ", 12, 39, 28);
+cout << "Player: " << endl;
+player.printPlayer();
+Player5( "Calvin de Haan ", 44, 4, 4);
+cout << "Player: " << endl;
+player.printPlayer();
+Player6( "Dylan Strome ", 17, 20, 23);
+cout << "Player: " << endl;
+player.printPlayer();
+return 0;
+}
