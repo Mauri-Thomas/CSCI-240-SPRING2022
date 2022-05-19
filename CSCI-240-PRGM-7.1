@@ -1,165 +1,104 @@
+***************************************************************/
 #include <iostream>
 #include <iomanip>
-#include <string.h>
-#include <cstring>
+#include <string>
+#include <iomanip>
+//symbolic contants
+#define lowerbd 1.0
+#define upperbd 750.0
+#define MAX 150
+#define MIN 25
+#define PERLINE 10
+
 using namespace std;
 
+//functions
+double randDouble();
+int buildRandom( double array[]);
+void print( string title, double array[], int numberOfValues );
+void sort( double array[], int numberOfValues );
 
-//Player class definition
-class Player
+
+int main()
 {
-public:
-  Player();
-  Player( const char[], int, int, int ); //changed for prgm 10
-  
-  void printPlayer();
-
-  void setName( "" ); //changed for prgm 10
-  void getName( char ); //added for prgm 10
-  void setNumber( int );
-  
-  void changeGoals( int );
-  void changeAssists( int );
-
-  string getName();
-  int getNumber();
-  int getGoals();
-  int getAssists();
-
-private:
-  arrayName[49]; //changed string to array(?) for prgm 10
-  int number;
-  int goals;
-  int assists;
-};
-
-//Constructors
-Player
-	{	
-		name = "\0";
-		goals = 0;
-		assists = 0;
-		points = 0;	
-	}
-
-Player name, int g, int a, int p
-	;{
-		
-		setName("n/a");
-		changeGoals(g);
-		changeAssists(a);
-		changePoints(p);
-	}
-
-//Methods
-void printPlayer ()
-	{
-		string name, goals, assists, points, rating;
-		cout << name << endl;
-		points = goals + assists;
-		cout << "Goals: " << goals << "Assist: " << assists << "Points: "<< points << "Plus/Minus: " << rating << endl;
-	}
-
-void setName(string playerName)
-	{	
-
-		strcpy(name, newName);
-	}
+	//set srand seed
+	srand(88); 
 	
-void setNumber( int newNumber)
-	{
-		
-		strcpy();
-	}
-
-void changeGoals(int goalsScored)
-	{
-	if (goalsScored <0)
-	cout << "error: number of goals cannot be less than 0 " << endl;
-	else assists += goalsScored;
-	}
-	 
-void changeAssists (int assistsEarned)
-	{
-	if (assistsEarned<0)
-	cout << "error: number of assists cannot be less than 0 " << endl;
-	else 
-	assists += assistsEarned;
-	}
-
-//added methods for prgm 10
-void setGoals( int newGoals )
-{
+	//declare array and variable
+	double array[MAX]; //array
+	int array1; //variable
 	
-}
+	//call arrays
+	array1 = buildRandom( double array[] ) //error expected primary-expression before double??I will skip this error and work on the rest of the code..
+	cout << "There are 98 values in the first array " << array1 << endl;
+
+	//display the values in array
+	print( "Random Array Values: ", double array[], array1 );
 	
-void setAssists( int newAssists )
-{
+	//sort the values
+	sort( double array[], array1);
+	
+	//second display
+	print( "Sorted Random Values: ", double array[], array1);
+	
+	return 0;
 	
 }
 
-void setPlayer( const char newName[], int newNumber, newGoals, int newAssists )
+//double function to generate random double value and return it
+double randDouble()
 {
-	
+	//just put return
+	return lowerbd + (randDouble / MAX / upperbd - lowerbd);
 }
 
-Player( int initialNumber )
+//int funtion to fill in array of doubles with rand numbers
+int buildRandom( doule array[] )
 {
-	cin.getline( character_array_name, number_of_characters_to_read );
+	//Generate random integer
+   int cnt = MIN + (rand() % (MAX - MIN + 1));
+   //For loop
+   for (int i = 0; i < cnt; i++) {
+       array[i] = randDouble();
+   }
+   return cnt;	
 }
 
-
-//returning methods
-string getName()
-	{
-		return name;
-	}
-	
-int getNumber()
-	{
-		return printNumber;
-	}
-	
-int getGoals()
-	{
-		return goals;
-	}
-
-int getAssists()
-	{
-		return assists;
-	}
-
-int getRating()
-	{
-		return rating;
-	}
-
-//main print player names
-int main ()
+//void print function
+void print( string title, double array[], int numberOfValues )
 {
-	double player1, player2, player3, player4, player5, player6
-	Player1( "Mauri Thomas ", 52, 15, 13);
-	Player2();
-	Player3( "Patrick Kane ", 88, 23, 60);
-	Player4( "Alex DeBrincat ", 12, 39, 28);
-	Player5( "Calvin de Haan ", 44, 4, 4);
-	Player6( "Dylan Strome ", 17, 20, 23);
-	
-	cout << "Player object:  " << endl;
-	player1.printPlayer();
+	cout << fixed << setprecision(3); //sets value 3 digits after decimal
+   	cout << "\n" << title << endl<< endl;
+   for (int i = 0; i < numberOfValues; i++)
+   {
+       if (i % 10 == 0 && i != 0) 
+	   {
+           cout << "\n" << array[i] << " ";
+       }
+       else
+	   {
+           cout << array[i] << " ";
+       }
+   }
+   cout << endl;	
+}
 
-	cout << "Player:  " << endl;
-	player3.printPlayer();
-
-	cout << "Player:  " << endl;
-	player4.printPlayer();
-
-	cout << "Player:  " << endl;
-	player5.printPlayer();
-
-	cout << "Player:  " << endl;
-	player6.printPlayer();
-
-return 0;
+//void sort function
+void sort( double array[], int numberOfValues )
+{
+	int index;
+    for (int i = 0; i < numberOfValues - 1; i++)
+   {
+       index = i;
+       for (int n = i + 1; n < numberOfValues; n++) 
+	   {
+           if (array[n] < array[index]) 
+		   {
+               index = n;
+           }  
+       }
+       double ar = array[index];
+       array[index] = array[i];
+       array[i] = ar;
+   }	
 }
