@@ -1,0 +1,28 @@
+#include <iostream>
+#include <iomanip>
+
+using namespace std;
+
+int main()
+{
+float initial_amount, rate, interest, time, total;
+time = 12;
+
+cout << "How much is the initial investment amount? "
+;cin >> initial_amount; 
+
+cout << "What is the annual interest rate? "
+;cin >> rate; 
+
+interest = initial_amount * rate / time;
+
+cout << endl << endl
+	 << ".........." << endl
+	 << "Investment Results    " << endl
+	 << ".........." << endl << endl
+	 << "Initial Investment    " << initial_amount << endl
+	 << "Annual Interest Rate  " << rate << endl << endl
+	 << "Future Account Value  " << interest << endl << endl;
+
+return 0;
+}
