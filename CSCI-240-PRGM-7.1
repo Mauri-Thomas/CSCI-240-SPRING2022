@@ -1,0 +1,165 @@
+#include <iostream>
+#include <iomanip>
+#include <string.h>
+#include <cstring>
+using namespace std;
+
+
+//Player class definition
+class Player
+{
+public:
+  Player();
+  Player( const char[], int, int, int ); //changed for prgm 10
+  
+  void printPlayer();
+
+  void setName( "" ); //changed for prgm 10
+  void getName( char ); //added for prgm 10
+  void setNumber( int );
+  
+  void changeGoals( int );
+  void changeAssists( int );
+
+  string getName();
+  int getNumber();
+  int getGoals();
+  int getAssists();
+
+private:
+  arrayName[49]; //changed string to array(?) for prgm 10
+  int number;
+  int goals;
+  int assists;
+};
+
+//Constructors
+Player
+	{	
+		name = "\0";
+		goals = 0;
+		assists = 0;
+		points = 0;	
+	}
+
+Player name, int g, int a, int p
+	;{
+		
+		setName("n/a");
+		changeGoals(g);
+		changeAssists(a);
+		changePoints(p);
+	}
+
+//Methods
+void printPlayer ()
+	{
+		string name, goals, assists, points, rating;
+		cout << name << endl;
+		points = goals + assists;
+		cout << "Goals: " << goals << "Assist: " << assists << "Points: "<< points << "Plus/Minus: " << rating << endl;
+	}
+
+void setName(string playerName)
+	{	
+
+		strcpy(name, newName);
+	}
+	
+void setNumber( int newNumber)
+	{
+		
+		strcpy();
+	}
+
+void changeGoals(int goalsScored)
+	{
+	if (goalsScored <0)
+	cout << "error: number of goals cannot be less than 0 " << endl;
+	else assists += goalsScored;
+	}
+	 
+void changeAssists (int assistsEarned)
+	{
+	if (assistsEarned<0)
+	cout << "error: number of assists cannot be less than 0 " << endl;
+	else 
+	assists += assistsEarned;
+	}
+
+//added methods for prgm 10
+void setGoals( int newGoals )
+{
+	
+}
+	
+void setAssists( int newAssists )
+{
+	
+}
+
+void setPlayer( const char newName[], int newNumber, newGoals, int newAssists )
+{
+	
+}
+
+Player( int initialNumber )
+{
+	cin.getline( character_array_name, number_of_characters_to_read );
+}
+
+
+//returning methods
+string getName()
+	{
+		return name;
+	}
+	
+int getNumber()
+	{
+		return printNumber;
+	}
+	
+int getGoals()
+	{
+		return goals;
+	}
+
+int getAssists()
+	{
+		return assists;
+	}
+
+int getRating()
+	{
+		return rating;
+	}
+
+//main print player names
+int main ()
+{
+	double player1, player2, player3, player4, player5, player6
+	Player1( "Mauri Thomas ", 52, 15, 13);
+	Player2();
+	Player3( "Patrick Kane ", 88, 23, 60);
+	Player4( "Alex DeBrincat ", 12, 39, 28);
+	Player5( "Calvin de Haan ", 44, 4, 4);
+	Player6( "Dylan Strome ", 17, 20, 23);
+	
+	cout << "Player object:  " << endl;
+	player1.printPlayer();
+
+	cout << "Player:  " << endl;
+	player3.printPlayer();
+
+	cout << "Player:  " << endl;
+	player4.printPlayer();
+
+	cout << "Player:  " << endl;
+	player5.printPlayer();
+
+	cout << "Player:  " << endl;
+	player6.printPlayer();
+
+return 0;
+}
