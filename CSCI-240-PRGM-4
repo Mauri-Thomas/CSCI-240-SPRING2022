@@ -1,0 +1,35 @@
+#include <iostream>
+#include <iomanip>
+#include <ctime> //true randomization
+#include <cstdlib> //so the random number generator can be used
+
+using namespace std;
+
+
+int main()
+{
+int num; 
+		
+srand(time(0)); 
+//for version
+cout << "First set of numbers: 37 values " << endl << endl;
+for(int i=0; i<37; i++)
+	cout << (rand() % 100000+1) << " ";
+//while version
+cout << endl << endl << "Second set of numbers: 5 values" << endl;
+while(num <= 5) { 
+	cout << (rand() % 100000+1)<< " " << endl;
+	num += 1;
+	}
+//do while version
+cout << endl << endl << "Third set of numbers: 5 values" << endl;
+do{
+	cout << (rand() % 100000+1)<< " " << endl;
+	num += 1;
+}
+while( num <= 10)
+	
+	
+	
+;return 0;	
+}
